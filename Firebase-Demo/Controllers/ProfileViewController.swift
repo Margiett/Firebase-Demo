@@ -30,6 +30,9 @@ class ProfileViewController: UIViewController {
     
     private let storageService = StorageService()
     
+    //MARK: March 10th 2020
+    private let databaseService = DatabaseService()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,14 +69,19 @@ class ProfileViewController: UIViewController {
         print("original image size: \(selectedImage.size)")
         print("resized image size: \(resizedImage)")
         
-        // TODO:
+        
         storageService.uploadPhoto(userId: user.uid, image: resizedImage) { [weak self] (result) in
             switch result {
             case .failure(let error):
                 DispatchQueue.main.async {
                     self?.showAlert(title: "Error updating photo", message: "\(error.localizedDescription)")
                 }
+    
             case .success(let url):
+                
+                self?.updateDatabaseUser(displayName: displayName, photoURL: url.absoluteString)
+                
+                //MARK: March 10 202 TODO: refactor into its own function
                 let request = Auth.auth().currentUser?.createProfileChangeRequest()
                 request?.displayName = displayName
                 request?.photoURL = url
@@ -95,7 +103,18 @@ class ProfileViewController: UIViewController {
 
         
     }
-    
+
+    //MARK: March 10th 2020
+    private func updateDatabaseUser(displayName: String, photoURL: String) {
+        databaseService.updateDatabaseUser(displayName: displayName, photoURL: photoURL) { (result) in
+            switch result {
+            case .failure(let error):
+               print("failed to update db user: \(error)")
+            case .success:
+                print("successfully updated db user")
+            }
+        }
+    }
        
    
     @IBAction func editProfilePhotoButtonPressed(_ sender: Any) {
