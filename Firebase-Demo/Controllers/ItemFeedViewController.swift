@@ -122,7 +122,19 @@ extension ItemFeedViewController: UITableViewDataSource {
     
 }
 extension ItemFeedViewController: UITableViewDelegate{
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let item = items[indexPath.row]
+        let storyboard = UIStoryboard(name: "MainView", bundle: nil)
+        let detailVC = storyboard.instantiateViewController(identifier: "ItemDetail") { (coder) in
+            return itemDetail (coder: coder, item: item)
+        }
+        navigationController?.pushViewController(detailVC, animated: true)
+
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 140
     }
 }
+

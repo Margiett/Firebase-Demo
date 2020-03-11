@@ -68,7 +68,7 @@ class DatabaseService {
         // each user would have a collection
         // this gets lets you see your own post the items you put for sell as well as to see the collection of items that other uses post .
         
-        // this would help you save and access the users information easily and full information for example before you were unable to see the users pictures 
+        // this would help you save and access the users information easily and full information for example before you were unable to see the users pictures
       db.collection(DatabaseService.userCollection).document(authDataResult.user.uid).setData(["email" : email, "createdData": Timestamp(date: Date()), "userId": authDataResult.user.uid]) { (error) in
             
             if let error = error {
