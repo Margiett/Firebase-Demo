@@ -127,7 +127,7 @@ extension ItemFeedViewController: UITableViewDelegate{
         let item = items[indexPath.row]
         let storyboard = UIStoryboard(name: "MainView", bundle: nil)
         let detailVC = storyboard.instantiateViewController(identifier: "ItemDetail") { (coder) in
-            return itemDetail (coder: coder, item: item)
+            return ItemDetail (coder: coder, item: item)
         }
         navigationController?.pushViewController(detailVC, animated: true)
 

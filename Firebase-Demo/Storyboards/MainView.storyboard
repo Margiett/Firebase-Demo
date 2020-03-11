@@ -83,7 +83,7 @@
         <!--Item Detail-->
         <scene sceneID="ZV7-43-4RX">
             <objects>
-                <viewController storyboardIdentifier="itemDetail" id="4UG-Ig-8BS" customClass="itemDetail" customModule="Firebase_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ItemDetail" id="4UG-Ig-8BS" customClass="ItemDetail" customModule="Firebase_Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jnW-YC-Ban">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -156,13 +156,14 @@
                     </view>
                     <navigationItem key="navigationItem" id="aLc-7s-JWn"/>
                     <connections>
+                        <outlet property="commentsConstraints" destination="Okg-Eb-nCV" id="eHj-9r-r4s"/>
                         <outlet property="tableView" destination="fP1-WE-Dkx" id="ORP-XV-kqi"/>
                         <outlet property="textField" destination="8pt-L3-2kR" id="Nwt-Ja-fCl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PQ5-bZ-RWR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1518.840579710145" y="-547.09821428571422"/>
+            <point key="canvasLocation" x="2428.985507246377" y="-547.09821428571422"/>
         </scene>
         <!--Create Item View Controller-->
         <scene sceneID="cZe-RC-4Pg">
@@ -308,7 +309,7 @@
             </objects>
             <point key="canvasLocation" x="100.00000000000001" y="784.82142857142856"/>
         </scene>
-        <!--Item Feed-->
+        <!--Item Feed View Controller-->
         <scene sceneID="tIc-Xe-hQ9">
             <objects>
                 <viewController storyboardIdentifier="ItemFeedViewController" id="4u5-ui-O5K" customClass="ItemFeedViewController" customModule="Firebase_Demo" customModuleProvider="target" sceneMemberID="viewController">
@@ -330,14 +331,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XF3-RM-aCJ"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item Feed" id="63a-nV-qOM"/>
+                    <navigationItem key="navigationItem" id="Bdk-DE-dEB"/>
                     <connections>
                         <outlet property="tableView" destination="NN1-Ca-Wn2" id="dzj-z9-eor"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NVL-4h-CPT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="100.00000000000001" y="-547.09821428571422"/>
+            <point key="canvasLocation" x="1010.144927536232" y="-547.09821428571422"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="zAv-01-pJo">
@@ -349,7 +350,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="4u5-ui-O5K" kind="relationship" relationship="viewControllers" id="mWW-cF-xO7"/>
+                        <segue destination="0Tf-rt-ASH" kind="relationship" relationship="viewControllers" id="mWW-cF-xO7"/>
                         <segue destination="7ib-X8-SMa" kind="relationship" relationship="viewControllers" id="c7U-m4-99r"/>
                         <segue destination="nM2-mu-qTC" kind="relationship" relationship="viewControllers" id="OLL-6k-pHW"/>
                     </connections>
@@ -392,7 +393,26 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nnE-Cm-FJU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="803" y="-547"/>
+            <point key="canvasLocation" x="1713.0434782608697" y="-547.09821428571422"/>
+        </scene>
+        <!--Item Feed-->
+        <scene sceneID="fcD-la-daM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0Tf-rt-ASH" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item Feed" id="63a-nV-qOM"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jgc-aN-EtA">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="4u5-ui-O5K" kind="relationship" relationship="rootViewController" id="e6f-m4-VNv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZGj-Ot-rxq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="100.00000000000001" y="-547.09821428571422"/>
         </scene>
     </scenes>
     <resources>
