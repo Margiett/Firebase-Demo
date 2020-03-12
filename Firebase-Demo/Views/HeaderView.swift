@@ -36,12 +36,12 @@ class HeaderView: UIView {
     
     
     private func commonInit() {
-        
+         setupImageView()
     }
     
     private func setupImageView(){
         addSubview(imageView)
-        imageView.translatesAutoresizingMaskIntoConstraints = true
+        imageView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             imageView.topAnchor.constraint(equalTo: topAnchor),
             imageView.leadingAnchor.constraint(equalTo: leadingAnchor),

@@ -39,6 +39,8 @@
 		9F47640124196A96006FC91B /* ItemDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F47640024196A96006FC91B /* ItemDetail.swift */; };
 		9F49701D240EC86E0002A32F /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F49701C240EC86E0002A32F /* Notes.swift */; };
 		9FB644732419739B001AB650 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB644722419739B001AB650 /* HeaderView.swift */; };
+		9FB6447524198F77001AB650 /* Comments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB6447424198F77001AB650 /* Comments.swift */; };
+		9FB64477241A962B001AB650 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB64476241A962B001AB650 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +91,8 @@
 		9F47640024196A96006FC91B /* ItemDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetail.swift; sourceTree = "<group>"; };
 		9F49701C240EC86E0002A32F /* Notes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
 		9FB644722419739B001AB650 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		9FB6447424198F77001AB650 /* Comments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comments.swift; sourceTree = "<group>"; };
+		9FB64476241A962B001AB650 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A9DF2901E19B0F9A0FEBB20A /* Pods_Firebase_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Firebase_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C385FFDDC582C03D7786236F /* Pods_Firebase_DemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Firebase_DemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC3BB636397A288C48B97E88 /* Pods-Firebase-DemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Firebase-DemoTests.release.xcconfig"; path = "Target Support Files/Pods-Firebase-DemoTests/Pods-Firebase-DemoTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -119,6 +123,7 @@
 			children = (
 				02682EB92409754F0064C354 /* AuthenticationSession.swift */,
 				9F396930240D7E610091CF91 /* DatabaseService.swift */,
+				9FB64476241A962B001AB650 /* Constants.swift */,
 			);
 			path = "Firebase Services";
 			sourceTree = "<group>";
@@ -197,6 +202,7 @@
 				9F39692E240D7B9B0091CF91 /* itemModel.swift */,
 				9F49701C240EC86E0002A32F /* Notes.swift */,
 				9FB644722419739B001AB650 /* HeaderView.swift */,
+				9FB6447424198F77001AB650 /* Comments.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -411,6 +417,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FB64477241A962B001AB650 /* Constants.swift in Sources */,
 				9F396931240D7E610091CF91 /* DatabaseService.swift in Sources */,
 				9F10897824100B0400870384 /* UIImage + Extensions.swift in Sources */,
 				026CA234240D5FAA00020057 /* UIViewController+Navigation.swift in Sources */,
@@ -434,6 +441,7 @@
 				02682EBA2409754F0064C354 /* AuthenticationSession.swift in Sources */,
 				9FB644732419739B001AB650 /* HeaderView.swift in Sources */,
 				57845ACF24092D4300F35651 /* SceneDelegate.swift in Sources */,
+				9FB6447524198F77001AB650 /* Comments.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
