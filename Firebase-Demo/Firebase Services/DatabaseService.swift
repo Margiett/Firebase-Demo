@@ -180,6 +180,9 @@ class DatabaseService {
             if let error = error {
                 completion(.failure(error))
             } else if let snapshot = snapshot {
+                // compact map removes nil value from an array
+                //[4, nil, 12, -9, nil] => [4, 12, -9]
+                //init?() => Favorites?
                 let items = snapshot.documents.map { Item($0.data()) }
                 completion(.success(items))
             }
@@ -187,6 +190,28 @@ class DatabaseService {
             }
         
     }
+    
+    //MARK: Today
+    // can update function to take a user id
+    public func fetchFavorites(completion: @escaping (Result<[Favorite], Error>) -> () ) {
+        //(Result<[Favorite], Error>) -> () ){
+        guard let user = Auth.auth().currentUser else { return }
+        // closure capture values
+        db.collection(DatabaseService.userCollection).document(user.uid).collection(DatabaseService.favoritesCollection).getDocuments {
+            (snapshot, error) in
+            if let error = error {
+                completion(.failure(error))
+            } else if let snapshot = snapshot{
+                // compact map removes  nil values from an array optionals
+                // [4, nil , 12, -9, nil] => [4, 12, -9]
+                // init?() => Favorite?
+                let favorties = snapshot.documents.compactMap { Favorite($0.data()) }
+                completion(.success(favorties))
+            }
+        }
+    }
+
+
     
 }
 

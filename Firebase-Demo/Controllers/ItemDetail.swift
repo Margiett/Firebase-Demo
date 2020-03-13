@@ -170,7 +170,7 @@ class ItemDetail: UIViewController {
           }
           
           @objc private func keyboardWillShow(_ notification: Notification) {
-              print(notification.userInfo ?? "")
+             // print(notification.userInfo ?? "")
               guard let keyboardFrame = notification.userInfo?["UIKeyboardBoundsUserInfoKey"] as? CGRect else {
                   return
               }
